@@ -6,22 +6,22 @@ models:
       columns:
           - name: order_item_key
             description: unique key for each order item
-            tests:
+            data_tests:
                 - unique
                 - not_null
           - name: order_key
             description: unique key for each order from source system
-            tests:
+            data_tests:
                 - not_null
 
           - name: order_date
             description: date the order was placed
-            tests:
+            data_tests:
                 - not_null
 
           - name: customer_key
             description: reference to `dim_customer`
-            tests:
+            data_tests:
                 - not_null
                 - relationships:
                     to: ref('dim_customer')
@@ -29,12 +29,12 @@ models:
 
           - name: order_status_code
             description: order status
-            tests:
+            data_tests:
                 - not_null
 
           - name: part_key
             description: reference to `dim_part`
-            tests:
+            data_tests:
                 - not_null
                 - relationships:
                     to: ref('dim_part')
@@ -42,7 +42,7 @@ models:
 
           - name: supplier_key
             description: reference to `dim_supplier`
-            tests:
+            data_tests:
                 - not_null
                 - relationships:
                     to: ref('dim_supplier')
@@ -50,95 +50,95 @@ models:
 
           - name: return_status_code
             description: return status
-            tests:
+            data_tests:
                 - not_null
 
           - name: order_line_number
             description: order line number
-            tests:
+            data_tests:
                 - not_null
 
           - name: order_line_status_code
             description: order line status
-            tests:
+            data_tests:
                 - not_null
 
           - name: ship_date
             description: date the order was shipped
-            tests:
+            data_tests:
                 - not_null
 
           - name: commit_date
             description: date the order was committed
-            tests:
+            data_tests:
                 - not_null
 
           - name: receipt_date
             description: date the order was received
-            tests:
+            data_tests:
                 - not_null
 
           - name: ship_mode_name
             description: shipping mode
-            tests:
+            data_tests:
                 - not_null
 
           - name: supplier_cost_amount
             description: item cost from supplier
-            tests:
+            data_tests:
                 - not_null
 
           - name: base_price
             description: item price before discount 
-            tests:
+            data_tests:
                 - not_null
                 
           - name: discount_percentage
             description: discount percentage
-            tests:
+            data_tests:
                 - not_null
 
           - name: discounted_price
             description: item price after discount
-            tests:
+            data_tests:
                 - not_null
 
           - name: tax_rate
             description: tax rate
-            tests:
+            data_tests:
                 - not_null
 
           - name: order_item_count
             description: represents number of order items, 1 for every row 
-            tests:
+            data_tests:
                 - not_null
 
           - name: quantity
             description: item quantity ordered
-            tests:
+            data_tests:
                 - not_null
 
           - name: gross_item_sales_amount
             description: total amount before discounts
-            tests:
+            data_tests:
                 - not_null
 
           - name: discounted_item_sales_amount
             description: total amount after discounts
-            tests:
+            data_tests:
                 - not_null
 
           - name: item_discount_amount
             description: total discount
-            tests:
+            data_tests:
                 - not_null
 
           - name: item_tax_amount
             description: total tax charged
-            tests:
+            data_tests:
                 - not_null
 
           - name: net_item_sales_amount                
             description: total amount after discounts and taxes
-            tests:
+            data_tests:
                 - not_null
